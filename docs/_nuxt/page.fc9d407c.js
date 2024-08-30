@@ -1,0 +1,1 @@
+import{_ as t}from"./nuxt-link.48f0f7a9.js";import{_ as o}from"./_plugin-vue_export-helper.c27b6911.js";import{c as a,b as n,w as c,F as s,a as r,o as _,d as m}from"./entry.d01a4c19.js";const d={},p=r("div",null,"testpage",-1);function f(i,l){const e=t;return _(),a(s,null,[p,n(e,{to:"/"},{default:c(()=>[m("About")]),_:1})],64)}const g=o(d,[["render",f]]);export{g as default};
