@@ -18,15 +18,9 @@ export const useWebsiteStore = defineStore("website", {
       return workbook;
     },
     async fetch() {
-      // const res = await fetch("/cges/test.json");
-      // const json = await res.blob();
-      // console.log("Getting site data", json);
       const wb = await this.parse_from_url("https://cges-zeta.vercel.app/cges/content.xlsx");
-      // const sheet = wb.Sheets[wb.SheetNames[0]];
       for (const s of wb.SheetNames) this.data[s] = XLSX.utils.sheet_to_json(wb.Sheets[s]);
       console.log("sitedata", this.data);
-
-      //if (json) Object.assign(this.data, json);
     },
   },
 });
