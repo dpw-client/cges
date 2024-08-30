@@ -1,3 +1,14 @@
 {
-  "rewrites": [{ "source": "/cges", "destination": "/" }]
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/cges",
+      "permanent": true
+    },
+    {
+      "source": "/cges/_nuxt/(.*)",
+      "destination": "/_nuxt/$1",
+      "permanent": true
+    }
+  ]
 }
