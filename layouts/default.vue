@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="logo dflt-color"
-      :style="`background-color: ${site?.AppColors?.[0]?.Primary}`"
-    >
+    <div class="logo dflt-color" :style="`background-color: ${site?.AppColors?.[0]?.Primary}`">
       <div class="pt-4 ml-6 mr-6 pb-4">
         <div class="d-flex flex-row justify-start align-center">
           <NuxtLink to="/">
@@ -12,77 +9,34 @@
           <div class="icon-text">Center on Gender and Extreme Sentencing</div>
         </div>
 
-        <v-divider
-          class="border-opacity-50 mt-4 mb-4"
-          color="white"
-        ></v-divider>
-        <div
-          v-if="!show.projects"
-          class="d-flex flex-nowrap justify-space-between"
-        >
+        <v-divider class="border-opacity-50 mt-4 mb-4" color="white"></v-divider>
+        <div v-if="!show.projects" class="d-flex flex-nowrap justify-space-between">
           <div />
           <div>
             <span v-for="(c, i) of site['Main Categories']" :key="c">
-              <v-btn
-                :to="c.link.startsWith('/') ? `${c.link}` : undefined"
-                color="textl"
-                variant="text"
-                :text="`${c.category}`"
-                prepend-icon="mdi-square"
-                @click="toggleShow(c.link)"
-                :id="`${c.link}-activator`"
-              />
+              <v-btn :to="c.link.startsWith('/') ? `${c.link}` : undefined" color="textl" variant="text" :text="`${c.category}`" prepend-icon="mdi-square" @click="toggleShow(c.link)" :id="`${c.link}-activator`" />
 
-              <v-menu
-                v-if="c.link == 'projects'"
-                activator="#projects-activator"
-              >
+              <v-menu v-if="c.link == 'projects'" activator="#projects-activator">
                 <v-list>
-                  <v-list-item
-                    v-for="(item, index) in site['Projects Categories']"
-                    :key="index"
-                    :value="index"
-                    :to="item.link.startsWith('/') ? `${item.link}` : undefined"
-                  >
+                  <v-list-item v-for="(item, index) in site['Projects Categories']" :key="index" :value="index" :to="item.link.startsWith('/') ? `${item.link}` : undefined">
                     <v-list-item-title>{{ item.category }}</v-list-item-title>
                   </v-list-item>
                 </v-list>
               </v-menu>
             </span>
           </div>
-          <v-btn
-            class="mt-6"
-            :color="site?.AppColors?.[0]?.Secondary ?? '#b1b7c1'"
-            text="Donate Now"
-            @click="
-              openTab(
-                'https://www.givegab.com/donation_widget?campaign_id=174243&group_id=508492&preview=%22%22'
-              )
-            "
-          />
+          <v-btn class="mt-6" :color="site?.AppColors?.[0]?.Secondary ?? '#b1b7c1'" text="Donate Now" @click="openTab('https://www.givegab.com/donation_widget?campaign_id=174243&group_id=508492&preview=%22%22')" />
         </div>
       </div>
     </div>
     <slot site="dorkus"></slot>
   </div>
-  <div
-    class="dflt-color"
-    :style="`background-color: ${site?.AppColors?.[0]?.Primary}`"
-  >
-    <div
-      class="text-textl ml-4 mr-4 pb-4 pt-4 d-flex flex-nowrap justify-space-between"
-    >
+  <div class="dflt-color" :style="`background-color: ${site?.AppColors?.[0]?.Primary}`">
+    <div class="text-textl ml-4 mr-4 pb-4 pt-4 d-flex flex-nowrap justify-space-between">
       <span>© 2024 Center on Gender and Extreme Sentencing</span>
       <span>
-        <v-icon
-          @click="
-            () => openTab('https://www.instagram.com/genderjusticenow_cges/')
-          "
-          >mdi-instagram</v-icon
-        >
-        <v-icon @click="() => openTab('mailto:clh288@cornell.edu')"
-          >mdi-email</v-icon
-        >
+        <v-icon @click="() => openTab('https://www.instagram.com/genderjusticenow_cges/')">mdi-instagram</v-icon>
+        <v-icon @click="() => openTab('mailto:clh288@cornell.edu')">mdi-email</v-icon>
       </span>
     </div>
   </div>
@@ -139,7 +93,7 @@ html {
 }
 
 .icon {
-  background-image: url("/cges/img/logo.png");
+  background-image: url("/img/logo.png");
   background-size: cover;
   width: 90px;
   height: 90px;

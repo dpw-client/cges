@@ -4,15 +4,7 @@
       <!-- FILTER -->
       <div>Filter by:</div>
       <v-list>
-        <v-list-item
-          v-for="(item, i) in ['All', ...types]"
-          :key="i"
-          :value="item"
-          :active="item == filter"
-          rounded="xl"
-          :color="site?.AppColors?.[0]?.Primary ?? '#b1b7c1'"
-          @click="() => filterBy(item)"
-        >
+        <v-list-item v-for="(item, i) in ['All', ...types]" :key="i" :value="item" :active="item == filter" rounded="xl" :color="site?.AppColors?.[0]?.Primary ?? '#b1b7c1'" @click="() => filterBy(item)">
           <template v-slot:prepend>
             <v-icon :icon="item.icon"></v-icon>
           </template>
@@ -27,19 +19,12 @@
         <b>{{ content.length }}</b> Found:
       </div>
       <div class="d-flex flex-wrap ga-6 justify-left pa-4">
-        <v-card
-          v-for="c of content"
-          :key="c"
-          :style="`width: 300px; border-top: 2px solid ${cardTypes[c.Type]};`"
-          @click="openURL(c.Attachments)"
-        >
+        <v-card v-for="c of content" :key="c" :style="`width: 300px; border-top: 2px solid ${cardTypes[c.Type]};`" @click="openURL(c.Attachments)">
           <v-card-item>
             <v-card-title v-if="'Title' in c" style="text-wrap: wrap">
               <b>{{ unquote(c.Title) }}</b>
             </v-card-title>
-            <v-card-subtitle v-if="'Subtitle' in c">{{
-              unquote(c.Subtitle)
-            }}</v-card-subtitle>
+            <v-card-subtitle v-if="'Subtitle' in c">{{ unquote(c.Subtitle) }}</v-card-subtitle>
             <template v-slot:prepend v-if="'Image' in c">
               <v-avatar size="64" rounded="0">
                 <v-img :src="`/cges/img/${c.Image}`"></v-img>
@@ -91,16 +76,12 @@ export default {
   },
   methods: {
     unquote(str) {
-      if (
-        (str.startsWith('"') && str.endsWith('"')) ||
-        (str.startsWith("'") && str.endsWith("'"))
-      )
-        return str.slice(1, -1); // Return the substring
+      if ((str.startsWith('"') && str.endsWith('"')) || (str.startsWith("'") && str.endsWith("'"))) return str.slice(1, -1); // Return the substring
       return str;
     },
     openURL(url) {
       if (url.startsWith("http")) window.open(url, "_blank");
-      else window.open("/cges/pdf/" + url, "_blank");
+      else window.open("/pdf/" + url, "_blank");
     },
     filterBy(type) {
       console.log("here");
