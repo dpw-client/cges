@@ -7,22 +7,22 @@
       :style="`background-color:${c.Background}; color:${c.Foreground};`"
     >
       <div v-if="c.Type == 'title'" style="font-size: 40px" class="mb-8 w-75">
-        <center>{{ unquote(c.Section) }}</center>
+        <center>{{ unquote(c.Text) }}</center>
       </div>
       <div
         v-if="c.Type == 'normal'"
         style="font-size: 20px"
         class="mb-4 w-75"
-        v-html="unquote(c.Section)"
+        v-html="unquote(c.Text)"
       />
-      <!-- {{ unquote(c.Section) }}
+      <!-- {{ unquote(c.Text) }}
       </div> -->
 
       <div
         v-if="c.Type == 'bg-image'"
         :style="`background-image: url(/cges/img/${c.Background}); background-size: cover; background-position: center; background-repeat: no-repeat;`"
       >
-        <ItemList :contentKey="c.Section" childWidth="w-75 rounded" />
+        <ItemList :contentKey="c.Text" childWidth="w-75 rounded" />
       </div>
 
       <v-parallax
@@ -30,18 +30,17 @@
         :src="`/cges/img/${c.Background}`"
         class="align-center"
       >
-        <ItemList :contentKey="c.Section" childWidth="w-75 rounded" />
+        <ItemList :contentKey="c.Text" childWidth="w-75 rounded" />
       </v-parallax>
 
       <div v-if="c.Type == 'picture'" style="font-size: 20px" class="mb-4 w-25">
-        <v-img :src="`/cges/img/${c.Section}`"> </v-img>
+        <v-img :src="`/cges/img/${c.Text}`"> </v-img>
       </div>
       <div v-if="c.Type == 'space'" class="mb-16" />
     </div>
   </div>
 </template>
 <script>
-// import siteData from "~/public/cges/localization.json";
 import { mapStores } from "pinia";
 import { useWebsiteStore } from "~~/stores/website";
 

@@ -1,0 +1,1 @@
+import{i as e}from"./ItemList.4e4c54b3.js";import{_ as t}from"./_plugin-vue_export-helper.c27b6911.js";import{n as s,q as r,o as n}from"./entry.9bc13c6a.js";import"./intersectionObserver.e65ffe5f.js";const c={components:{il:e}};function p(a,i,m,_,f,l){const o=s("il");return n(),r(o,{contentKey:"Resources List"})}const k=t(c,[["render",p]]);export{k as default};

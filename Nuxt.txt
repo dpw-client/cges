@@ -1,12 +1,9 @@
 WATCH:
 npm run dev
 
-DEPLOY:
+DEPLOY: (from project root)
 npx nuxi generate
 cp -ar .output/public/* docs/
-cd docs/
-cp -ar cges/* .
-git add docs
-
 cp -ar docs/cges/* docs && git add docs
-git commit -am "deploy" && git pu
+git commit -am "deploy" && git push
+

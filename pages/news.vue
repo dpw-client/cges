@@ -1,6 +1,6 @@
 <template>
-  <il contentKey="News & Events List" />
-  <ig contentKey="News & Events Cards" />
+  <il contentKey="News List" />
+  <ig contentKey="News Cards" />
 </template>
 
 <script>

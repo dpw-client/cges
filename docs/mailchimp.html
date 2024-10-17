@@ -6,6 +6,7 @@
   </head>
   <!-- MW added style tag -->
   <body style="overflow: hidden">
+    <!-- MW added style tag -->
     <div
       id="mc_embed_shell"
       style="width: fit-content; margin: auto; height: fit-content"
@@ -22,7 +23,7 @@
       </style>
       <div id="mc_embed_signup">
         <form
-          action="https://deathpenaltyworldwide.us19.list-manage.com/subscribe/post?u=31130f2d1e51596c45b1a2447&amp;id=c4423ed165&amp;f_id=00d1b4e4f0"
+          action="https://deathpenaltyworldwide.us19.list-manage.com/subscribe/post?u=31130f2d1e51596c45b1a2447&amp;id=792df22157&amp;f_id=00deb6e7f0"
           method="post"
           id="mc-embedded-subscribe-form"
           name="mc-embedded-subscribe-form"
@@ -53,7 +54,9 @@
                 style="width: 85vw; max-width: 500px"
               />
             </div>
-            <div hidden=""><input type="hidden" name="tags" value="9833954"></div>
+            <div hidden="">
+              <input type="hidden" name="tags" value="24262353,9833954" />
+            </div>
             <div id="mce-responses" class="clear">
               <div
                 class="response"
@@ -69,7 +72,7 @@
             <div aria-hidden="true" style="position: absolute; left: -5000px">
               <input
                 type="text"
-                name="b_31130f2d1e51596c45b1a2447_c4423ed165"
+                name="b_31130f2d1e51596c45b1a2447_792df22157"
                 tabindex="-1"
                 value=""
               />
@@ -86,7 +89,6 @@
           </div>
         </form>
       </div>
-
       <script
         type="text/javascript"
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
@@ -105,10 +107,30 @@
           ftypes[3] = "address";
           fnames[4] = "PHONE";
           ftypes[4] = "phone";
-          fnames[5] = "BIRTHDAY";
-          ftypes[5] = "birthday";
         })(jQuery);
         var $mcj = jQuery.noConflict(true);
+      </script>
+      <script>
+        // This is nonstandard code Chelsea requires
+        // select the target node
+        var target = document.getElementById("mce-success-response");
+        const chelseas_msg =
+          "<div style='color: black'>Thank you for your interest in accessing our resource hub, you will be added to a box folder by a member of our staff where you can access the resource hub materials, please let us know if you have any questions.</div>";
+
+        // create an observer instance
+        var observer = new MutationObserver(function (mutations) {
+          mutations.forEach(function (mutation) {
+            if (target.innerHTML === "Thank you for subscribing!") {
+              target.innerHTML = chelseas_msg;
+            }
+          });
+        });
+
+        // configuration of the observer:
+        var config = { attributes: true, childList: true, characterData: true };
+
+        // pass in the target node, as well as the observer options
+        observer.observe(target, config);
       </script>
     </div>
   </body>
