@@ -2,11 +2,11 @@
 
 export default defineNuxtConfig({
   app: {
-    baseURL: "/cges/",
+    baseURL: "/",
   },
 
   router: {
-    base: "/cges/",
+    base: "/",
   },
   devtools: { enabled: true },
   modules: ["@invictus.codes/nuxt-vuetify", "@pinia/nuxt"],
